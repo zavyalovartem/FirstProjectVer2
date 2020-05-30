@@ -9,6 +9,9 @@ from Scene import Scene
 from Task import Task
 import Level_1
 import Level_2
+import Level_3
+import Level_4
+import Level_5
 import time
 
 bot = telebot.TeleBot(config.Token)
@@ -42,6 +45,29 @@ def send_welcome(message):
     else:
         bot.send_message(message.chat.id, "Твоё приключение уже началось")
 
+@bot.message_handler(commands=["Level1", "Level2", "Level3", "Level4", "Level5", "Level6"])
+def go_to_level1(message):
+    global  current_nandler
+    if message.text == "/Level1":
+        current_nandler = Level_1.Level_1_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif message.text == "/Level2":
+        current_nandler = Level_2.Level_2_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif message.text == "/Level3":
+        current_nandler = Level_3.Level_3_Handler(message.cat.id, message, bot)
+        current_nandler.handle_start()
+    elif message.text == "/Level4":
+        current_nandler = Level_4.Level_4_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif message.text == "/Level5":
+        current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif message.text == "/Level6":
+        current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+
+
 def check_player_in_dict(id, type):
     if id not in players:
         return False
@@ -58,7 +84,14 @@ def handle_scene(message):
         current_nandler = Level_2.Level_2_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
     elif transition == 3:
-        current_nandler = 3
+        current_nandler = Level_3.Level_3_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif transition == 4:
+        current_nandler = Level_4.Level_4_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif transition == 5:
+        current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Task"), content_types=["text"])
 def handle_task(message):
@@ -71,7 +104,14 @@ def handle_task(message):
         current_nandler = Level_2.Level_2_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
     elif transition == 3:
-        current_nandler = 3
+        current_nandler = Level_3.Level_3_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif transition == 4:
+        current_nandler = Level_4.Level_4_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+    elif transition == 5:
+        current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
 
 
 

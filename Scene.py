@@ -43,4 +43,19 @@ class Scene:
             return (Task(self.tasks[self.answers[message]["Goto"]], self.scenes, self.tasks), change)
         return (Scene(self.scenes[self.answers[message]["Goto"]], self.scenes, self.tasks), change)
 
+    def level_5_get_goto_type_for_incorrect(self):
+        return self.raw_data["Goto_Type"]
+
+    def level_5_get_next_for_incorrect(self):
+        if self.level_5_get_goto_type_for_incorrect() == "Task":
+            return  Task(self.tasks[self.level_5_get_goto_for_incorrect()], self.scenes, self.tasks)
+        from Scene import Scene
+        return (Scene(self.scenes[self.level_5_get_goto_for_incorrect()], self.scenes, self.tasks))
+
+    def level_5_return_if_first_part_fail(self):
+        return Scene(self.scenes[12], self.scenes, self.tasks)
+
+    def level_5_return_first_part_success(self):
+        return Scene(self.scenes[3], self.scenes, self.tasks)
+
 

@@ -24,7 +24,7 @@
       }
     },
     "PhotoId": "",
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "Text":"Ты достаешь из кармана камень. Осталось понять с какой силой кинуть камень, если высота стены 6 метров.(Отношение массы камня к времени полета считать равным 1, а sin угла равным 1/2)"
   },
   {
@@ -55,7 +55,7 @@
         "Correct": "False"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAID_V7MPTgl8anm7wtsjoXCzxlVcGZCAAJXrjEb6othSq3JwisrZ2P67H_Zky4AAwEAAwIAA3kAA0rNAAIZBA",
     "Text":"1) К вертикально расположенной пружине динамометра, корпус которого прикреплён к потолку, подвешен груз массой 15 кг. Каково будет показание динамометра, если человек, стоящий под грузом, будет пробовать приподнять этот груз, действуя на него направленной вверх силой 57 Н?"
   },
@@ -87,7 +87,7 @@
         "Correct": "False"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAID_17MPToNKLeBT9GI0FUT7gI5Hl4LAAJYrjEb6othSgVQL6lqs3Dew5l9ki4AAwEAAwIAA3kAAz3UAQABGQQ",
     "Text":"2)На брусок массой 5 кг, движущийся по горизонтальной поверхности, действует сила трения скольжения 20 Н. Чему будет равна сила трения скольжения, если, не изменяя коэффициент трения, уменьшить в 4 раза массу бруска? (Ответ дайте в ньютонах.)"
   },
@@ -119,7 +119,7 @@
         "Correct": "True"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAIEAV7MPTwvxIUtoB_9JGq-OnMVeE28AAJZrjEb6othSsSpssN9BJH9-qWAki4AAwEAAwIAA3kAA1jXAQABGQQ",
     "Text":"3)Камень массой 100 г брошен вертикально вверх с начальной скоростью  Чему равен модуль силы тяжести, действующей на камень в момент броска? (Ответ дайте в ньютонах.) Ускорение свободного падения принять равным 10 м/с^2."
   },
@@ -145,7 +145,7 @@
         "Correct": "False"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAIEA17MPT-PsgGOk6l4uooLO4I8fH-DAAJarjEb6othSjJpvhqSvzKRhgXbky4AAwEAAwIAA3kAA0XMAAIZBA",
     "Text":"4)На улице идет дождь. В каком случае ведро, стоящее в кузове грузового автомобиля, наполнится быстрее водой: когда автомобиль движется или когда он стоит?"
   },
@@ -177,7 +177,7 @@
         "Correct": "False"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAIEBV7MPUGgtxdk7t8bKeEomzE1_t1PAAJbrjEb6othSg3pF4ZrfmJMJF7LDgAEAQADAgADeQADThIGAAEZBA",
     "Text":"5)В момент, когда тронулся поезд, провожающий начал равномерно бежать по ходу поезда со скоростью v0=3,5 м/с. Принимая движение поезда равноускоренным, определить скорость поезда v в тот момент, когда провожаемый поравняется с провожающим."
   },
@@ -209,7 +209,7 @@
         "Correct": "False"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAIEB17MPUMZxf4FC6Ec_SvSWfvtQO5CAAJcrjEb6othSj6ibdTatDcCRVzLDgAEAQADAgADeQADsA8GAAEZBA",
     "Text":"6)За какую секунду от начала движения путь, пройденный телом в равноускоренном движении, втрое больше пути, пройденного в предыдущую секунду, если движение происходит без начальной скорости?"
   },
@@ -241,7 +241,7 @@
         "Correct": "False"
       }
     },
-    "Type" : "Task",
+    "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAIECV7MPUbbEK55Y5Na6dPjzfdhQ6-8AAJdrjEb6othSnPCVnvRm_yUyk2AkS4AAwEAAwIAA3kAA522AwABGQQ",
     "Text":"7)Камень массой m = 200 г брошен с горизонтальной поверхности под углом к горизонту и упал на нее обратно на расстоянии s = 5 м через t = 1,2 с. Найти работу бросания. Сопротивлением воздуха пренебречь.",
     "Next_Level": 2
