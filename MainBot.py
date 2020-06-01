@@ -12,7 +12,10 @@ import Level_2
 import Level_3
 import Level_4
 import Level_5
+import Level_6
 import time
+import Theory
+import Theory_Handler
 
 bot = telebot.TeleBot(config.Token)
 global players
@@ -20,33 +23,103 @@ global Started
 Started = False
 players = {}
 global current_nandler
+global handler_on_hold
+global prev_type
+global prev_part
+global prev_message
+
+@bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Theory"), content_types=['text'])
+def handle_theory(message):
+    global current_nandler
+    global prev_part
+    global prev_type
+    global prev_message
+    global handler_on_hold
+    global players
+    current_nandler.message = message
+    if message.text == "Вернуться к игре":
+        message = prev_message
+        if prev_message.text == "/start":
+            send_welcome(prev_message)
+        current_nandler = handler_on_hold
+        if prev_type == "Scene":
+            players[message.chat.id].part_type = "Scene"
+            current_nandler.player.part_type = "Scene"
+            current_nandler.player.current_part = prev_part
+            current_nandler.message = prev_message
+            current_nandler.handle_scene()
+            return
+        else:
+            players[message.chat.id].part_type = "Task"
+            current_nandler.player.part_type = "Task"
+            current_nandler.player.current_part = prev_part
+            current_nandler.message = prev_message
+            current_nandler.handle_task()
+            return
+    new_player = current_nandler.handle_theory()
+    players[message.chat.id] = new_player
+
+@bot.message_handler(func=lambda message: message.text == "Теория")
+def theory(message):
+    global handler_on_hold
+    global players
+    global current_nandler
+    type_on_hold = players[message.chat.id].part_type
+    handler_on_hold = current_nandler
+    part_on_hold = players[message.chat.id].current_part
+    current_nandler = Theory_Handler.Theory_Handler(bot, message)
+    players[message.chat.id].part_type = "Theory"
+    current_nandler.handle_start()
+
+def generate_markup_for_theory(answers):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard= True)
+    for answer in answers:
+        markup.add(answers)
+    markup.add("Вернуться к игре")
+    return markup
+
+
 
 @bot.message_handler(commands=['test'])
 def get_ids(message):
-    bot.send_message(message.chat.id, "Intros")
-    path = os.getcwd() + "/Illustrations/Intros"
+    path = os.getcwd() + "/Illustrations" + "/Theory"
     for file in os.listdir(path):
-        f = open(path + '/' + file, 'rb')
+        f = open(path + "\\" + file, 'rb')
         msg = bot.send_photo(message.chat.id, f)
         bot.send_message(message.chat.id, msg.photo[2].file_id, reply_to_message_id=msg.message_id)
-    time.sleep(3)
+
+
+
+        # bot.send_message(message.chat.id, dir)
+        # for subdir in os.listdir(path + "\\" + dir):
+        #     bot.send_message(message.chat.id, subdir)
+        #     for file in os.listdir(path + "\\"+ dir + "\\"+ subdir):
+        #         f = open(path + "\\"+ dir + "\\"+ subdir + "\\" + file, 'rb')
+        #         msg = bot.send_photo(message.chat.id, f)
+        #         bot.send_message(message.chat.id, msg.photo[2].file_id, reply_to_message_id=msg.message_id)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     global Started
     global players
     global current_nandler
+    global prev_type
+    global prev_part
+    global prev_message
     text_directory = os.getcwd() + "/JsonScenes"
     if Started == False:
         Started = True
         current_nandler = Level_1.Level_1_Handler(message.chat.id, message, bot)
         players[message.chat.id] = current_nandler.player
         current_nandler.handle_start()
+        prev_message = message
+        prev_type = players[message.chat.id].part_type
+        prev_part = players[message.chat.id].current_part
     else:
         bot.send_message(message.chat.id, "Твоё приключение уже началось")
 
 @bot.message_handler(commands=["Level1", "Level2", "Level3", "Level4", "Level5", "Level6"])
-def go_to_level1(message):
+def go_to_level(message):
     global  current_nandler
     if message.text == "/Level1":
         current_nandler = Level_1.Level_1_Handler(message.chat.id, message, bot)
@@ -55,7 +128,7 @@ def go_to_level1(message):
         current_nandler = Level_2.Level_2_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
     elif message.text == "/Level3":
-        current_nandler = Level_3.Level_3_Handler(message.cat.id, message, bot)
+        current_nandler = Level_3.Level_3_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
     elif message.text == "/Level4":
         current_nandler = Level_4.Level_4_Handler(message.chat.id, message, bot)
@@ -64,7 +137,7 @@ def go_to_level1(message):
         current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
     elif message.text == "/Level6":
-        current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
+        current_nandler = Level_6.Level_6_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
 
 
@@ -76,6 +149,12 @@ def check_player_in_dict(id, type):
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Scene"), content_types=['text'])
 def handle_scene(message):
     global current_nandler
+    global prev_part
+    global prev_message
+    global prev_type
+    prev_message = message
+    prev_type = players[message.chat.id].part_type
+    prev_part = players[message.chat.id].current_part
     player = players[message.chat.id]
     current_nandler.message = message
     new_player, transition = current_nandler.handle_scene()
@@ -92,10 +171,19 @@ def handle_scene(message):
     elif transition == 5:
         current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
+    elif transition == 6:
+        current_nandler = Level_6.Level_6_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Task"), content_types=["text"])
 def handle_task(message):
     global current_nandler
+    global prev_part
+    global prev_message
+    global prev_type
+    prev_message = message
+    prev_type = players[message.chat.id].part_type
+    prev_part = players[message.chat.id].current_part
     player = players[message.chat.id]
     current_nandler.message = message
     new_player, transition = current_nandler.handle_task()
@@ -112,6 +200,10 @@ def handle_task(message):
     elif transition == 5:
         current_nandler = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_nandler.handle_start()
+    elif transition == 6:
+        current_nandler = Level_6.Level_6_Handler(message.chat.id, message, bot)
+        current_nandler.handle_start()
+
 
 
 

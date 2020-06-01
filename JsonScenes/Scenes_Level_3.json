@@ -18,7 +18,7 @@
       "Оглядеться":  {}
   },
     "CurrentType" : "Scene",
-    "PhotoId": "",
+    "PhotoId": "AgACAgIAAxkDAAINdF7Tz1fbuqkvaiThJE8NrFKC_C6xAAL5rTEb3eahSkIsHNCli8pXaqS6ki4AAwEAAwIAA3kAAzWxAgABGQQ",
     "Next_Level": 3,
     "Text":"Ты опять допускаешь ошибку в расчетах, Иван явно недоволен тобой. Ты уже начинаешь извиняться, как тут всё исчезает."
   },
@@ -38,14 +38,14 @@
     {
     "SceneNumber": 3,
     "Answers" : {
-      "Уйти":  {
+      "Уйти в комнату":  {
                   "Response": "",
                   "Goto": 4,
                   "Type": "Scene"
                 }
   },
     "CurrentType" : "Scene",
-    "PhotoId": "",
+    "PhotoId": "AgACAgIAAxkDAAINdl7Tz1ugwXZrc9jwlm2w2jfkhB3AAAL6rTEb3eahSghg_OaU7Ei1fuVKkS4AAwEAAwIAA3kAAy43BAABGQQ",
     "Text":"Вы с хозяйкой дома беседуете, ты узнаешь, что её зовут Анна, как вдруг голос в голове начинает что-то говорить тебе, ты отчетливо разбираешь то, что он тебе говорит, но похоже это другой язык."
   },
     {
@@ -56,7 +56,7 @@
                   "Goto": 5,
                   "Type": "Scene"
                 },
-      "Молча уйти":  {
+      "Молча уйти в комнату":  {
                   "Response": "",
                   "Goto": 6,
                   "Type": "Scene"
@@ -70,7 +70,7 @@
     "SceneNumber": 5,
     "Answers" : {},
     "CurrentType" : "Scene",
-    "PhotoId": "",
+    "PhotoId": "AgACAgIAAxkDAAINdl7Tz1ugwXZrc9jwlm2w2jfkhB3AAAL6rTEb3eahSghg_OaU7Ei1fuVKkS4AAwEAAwIAA3kAAy43BAABGQQ",
     "Next_Level": 4,
     "Text":"Вы разговариваете несколько часов, за это время ты узнаешь, что её сын постоянно пытался выяснить что с ним произошло, а потом пропал. Также ты узнаешь, что одни и те же голоса в голове слышат многие. Интересно с чем это всё связано..."
   },
@@ -78,8 +78,8 @@
     "SceneNumber": 6,
     "Answers" : {},
     "CurrentType" : "Scene",
-    "PhotoId": "",
+    "PhotoId": "AgACAgIAAxkDAAINdl7Tz1ugwXZrc9jwlm2w2jfkhB3AAAL6rTEb3eahSghg_OaU7Ei1fuVKkS4AAwEAAwIAA3kAAy43BAABGQQ",
     "Next_Level": 4,
-    "Text":"Ты решаешь не развивать эту тему и молча уйти"
+    "Text":"Ты решаешь не развивать эту тему и молча уйти в комнату"
   }
 ]

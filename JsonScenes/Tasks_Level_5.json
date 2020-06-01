@@ -16,6 +16,7 @@
     "CurrentType" : "Task",
     "Goto": 1,
     "Goto_Type": "Task",
+    "PhotoId": "AgACAgIAAxkDAAINm17Tz5fYk4S23VOUAQ1iT1ZsBM-qAAIIrjEb3eahSrJbQ_d6iVYYFxd0kS4AAwEAAwIAA3kAAwPuAwABGQQ",
     "Text":"К левому концу невесомого стержня прикреплен груз массой 3 кг (см. рисунок). Стержень расположили на опоре, отстоящей от его левого конца на 0,2 длины стержня. Чему равна масса груза, который надо подвесить к правому концу стержня, чтобы он находился в равновесии? (Ответ дайте в килограммах.)"
   },
     {
@@ -27,6 +28,7 @@
         "Type": "Task"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINnV7Tz5lpDLZjAAE4BQmAiuY2LXX6LAACCa4xG93moUose3BAEp2ZPZFNyw4ABAEAAwIAA3kAA_DRBQABGQQ",
     "CurrentType" : "Task",
     "Goto": 2,
     "Goto_Type": "Task",
@@ -41,6 +43,7 @@
         "Type": "Task"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINn17Tz5sMbvkgQe1QsuIb6GtriYTmAAIKrjEb3eahSnkuAAEpEmv04Q-ueJEuAAMBAAMCAAN5AAOM6wMAARkE",
     "CurrentType" : "Task",
     "Goto": 3,
     "Goto_Type": "Task",
@@ -55,6 +58,7 @@
         "Type": "Task"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINoV7Tz52CZ0HkhxcJoM7t__BXJM8jAAILrjEb3eahSlTuB9rGzWw4qxXeky4AAwEAAwIAA3kAA2AHAQABGQQ",
     "CurrentType" : "Task",
     "Goto": 4,
     "Goto_Type": "Task",
@@ -69,6 +73,7 @@
         "Type": "Scene"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINo17Tz58kOr-4hlgmOwzJa27lrFgUAAIMrjEb3eahSrql6L8EqufHUpvfky4AAwEAAwIAA3kAA00JAQABGQQ",
     "CurrentType" : "Task",
     "Goto": 13,
     "Goto_Type": "Scene",
@@ -83,6 +88,7 @@
         "Type": "Scene"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINpl7Tz6Hzbj1pb785j-nZhmaeb_ElAAINrjEb3eahSlOqc01ahuhv59XGki4AAwEAAwIAA3kAA0q0AgABGQQ",
     "CurrentType": "Task",
     "Goto": 6,
     "Goto_Type": "Scene",
@@ -102,6 +108,7 @@
         "Type": "Scene"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINqF7Tz6LIUemHD56ZRiION_nel42FAAIOrjEb3eahSt5W6_bN9cQJThq5ki4AAwEAAwIAA3kAA8WyAgABGQQ",
     "CurrentType" : "Task",
     "Goto": 7,
     "Goto_Type": "Scene",
@@ -121,6 +128,7 @@
         "Type": ""
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINql7Tz6XNxVrxLp5NWKysdXTJwm9yAAIPrjEb3eahSiM10h83jw7OoYXuki4AAwEAAwIAA3kAAxsUAgABGQQ",
     "CurrentType" : "Task",
     "Goto": 8,
     "Goto_Type": "Scene",
@@ -140,6 +148,7 @@
         "Type": "Scene"
       }
     },
+    "PhotoId": "AgACAgIAAxkDAAINrF7Tz6d054qys9kiVKp6UPLXUu5kAAIQrjEb3eahSts4zbLu-lXAqE6AkS4AAwEAAwIAA3kAAwXxAwABGQQ",
     "CurrentType" : "Task",
     "Goto": 9,
     "Goto_Type": "Scene",

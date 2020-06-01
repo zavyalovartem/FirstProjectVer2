@@ -1,0 +1,58 @@
+[
+  {
+    "TaskNumber": 0,
+    "Answers": {
+      "4,9": {
+        "Response": "",
+        "Goto": 1,
+        "Type": "Scene"
+      },
+      "9,8": {
+        "Response": "",
+        "Goto": 2,
+        "Type": "Scene"
+      },
+      "3,27": {
+        "Response": "",
+        "Goto": 2,
+        "Type": "Scene"
+      },
+      "19": {
+        "Response": "",
+        "Goto": 2,
+        "Type": "Scene"
+      }
+    },
+    "PhotoId": "AgACAgIAAxkDAAINuV7Tz8THwWQMr1gGNPgbh_9CWU5nAAIVrjEb3eahSotJYsgBARzOydfGki4AAwEAAwIAA3kAA3StAgABGQQ",
+    "CurrentType" : "Task",
+    "Text":"Галилей определял на опыте ускорение свободного падения, скатывая шары с наклонной плоскости. При этом он ошибочно исходил из того, что ускорение шара а = gsinα, где α = угол наклона плоскости. На самом деле шары скатываются с меньшим ускорением. В результате Галилей получил заниженное значение g1 ускорения свободного падения. Какое значение g1 получил бы Галилей, скатывая с наклонной плоскости обручи?"
+  },
+    {
+    "TaskNumber": 2,
+    "Answers": {
+      "30": {
+        "Response": "",
+        "Goto": 4,
+        "Type": "Scene"
+      },
+      "60": {
+        "Response": "",
+        "Goto": 5,
+        "Type": "Scene"
+      },
+      "45": {
+        "Response": "",
+        "Goto": 5,
+        "Type": "Scene"
+      },
+      "15": {
+        "Response": "",
+        "Goto": 5,
+        "Type": "Scene"
+      }
+    },
+    "PhotoId": "AgACAgIAAxkDAAINu17Tz8WpskzHCGBJhBzRiBHKllUXAAIWrjEb3eahSnYyT1B2XT5cfNb2lC4AAwEAAwIAA3kAA0Q_AAIZBA",
+    "CurrentType" : "Task",
+    "Text":"Поезд движется равнозамедленно, имея начальную скорость 54 км/ч и ускорение -0,5 м/с2. Через какое время  поезд остановится?"
+  }
+]
