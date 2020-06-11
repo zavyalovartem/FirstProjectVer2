@@ -35,6 +35,9 @@ class Scene:
             return True
         return False
 
+    def get_number(self):
+        return self.scene_number
+
     def get_next(self, message):
         change = self.check_advancing(message)
         type = self.answers[message]["Type"]

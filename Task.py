@@ -27,8 +27,13 @@ class Task:
         return ""
 
     def check_advancing(self, message_text):
+        if message_text not in self.answers:
+            return False
         return self.type != self.answers[message_text]["Type"] or \
                self.task_number != self.answers[message_text]["Goto"]
+
+    def get_number(self):
+        return self.task_number
 
     def get_next(self, message):
         change = self.check_advancing(message)

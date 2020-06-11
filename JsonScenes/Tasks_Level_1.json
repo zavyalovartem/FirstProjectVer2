@@ -218,32 +218,39 @@
     "Answers": {
       "5.2": {
         "Response": "",
-        "Goto": 0,
-        "Type": "Scene",
+        "Goto": 8,
+        "Type": "Task",
         "Correct": "True"
       },
       "5.4": {
         "Response": "",
-        "Goto": 0,
+        "Goto": 8,
         "Type": "Task",
         "Correct": "False"
       },
       "5.1" : {
         "Response": "",
-        "Goto": 0,
+        "Goto": 8,
         "Type": "Task",
         "Correct": "False"
       },
       "5.7": {
         "Response": "",
-        "Goto": 0,
+        "Goto": 8,
         "Type": "Task",
         "Correct": "False"
       }
     },
     "CurrentType" : "Task",
     "PhotoId": "AgACAgIAAxkDAAIECV7MPUbbEK55Y5Na6dPjzfdhQ6-8AAJdrjEb6othSnPCVnvRm_yUyk2AkS4AAwEAAwIAA3kAA522AwABGQQ",
-    "Text":"7)Камень массой m = 200 г брошен с горизонтальной поверхности под углом к горизонту и упал на нее обратно на расстоянии s = 5 м через t = 1,2 с. Найти работу бросания. Сопротивлением воздуха пренебречь.",
+    "Text":"7)Камень массой m = 200 г брошен с горизонтальной поверхности под углом к горизонту и упал на нее обратно на расстоянии s = 5 м через t = 1,2 с. Найти работу бросания. Сопротивлением воздуха пренебречь."
+  },
+  {
+    "TaskNumber": 8,
+    "Answers": {},
+    "CurrentType" : "Task",
+    "PhotoId": "",
+    "Text":"Сделав тест, ты ложишься спать",
     "Next_Level": 2
   }
 ]
