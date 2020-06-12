@@ -16,6 +16,7 @@ import Level_6
 import time
 import Theory
 import Theory_Handler
+import flask
 
 bot = telebot.TeleBot(config.Token)
 global players
@@ -29,6 +30,7 @@ global prev_part
 global prev_message
 global not_advancing
 not_advancing = False
+server = flask.Flask(__project_server__)
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Theory"), content_types=['text'])
 def handle_theory(message):
@@ -269,6 +271,13 @@ def handle_task(message):
         prev_message.text = "Transition"
 
 
+@server.route('/' + config.Token, methods=['POST'])
+def getMessage():
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
 
-
-bot.infinity_polling()
+@server.route("/")
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
+    return "!", 200
