@@ -16,7 +16,7 @@ import Level_6
 import time
 import Theory
 import Theory_Handler
-import flask
+from flask import Flask, request
 
 bot = telebot.TeleBot(config.Token)
 global players
@@ -30,7 +30,7 @@ global prev_part
 global prev_message
 global not_advancing
 not_advancing = False
-server = flask.Flask(__project_server__)
+server = Flask(__name__)
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Theory"), content_types=['text'])
 def handle_theory(message):
