@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c3410a0-5503-44d0-8277-1e8bbfc44e36" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/certifi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/certifi/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/installed-files.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/requires.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/six.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/apihelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/apihelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/types.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/connectionpool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/connectionpool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/pyopenssl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/pyopenssl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/securetransport.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/securetransport.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/poolmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/poolmanager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/retry.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/retry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/ssl_.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/ssl_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/timeout.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/timeout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/url.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainBot.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dFpRlA1uLeP52C2nBUdDCFfqGq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.MainBot">
+    <configuration name="MainBot" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="venv" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\1\PycharmProjects\FirstProject\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="MainBot" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="venv" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\1\PycharmProjects\FirstProject\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Unnamed" />
+      <item itemvalue="Python.MainBot" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c3410a0-5503-44d0-8277-1e8bbfc44e36" name="Default Changelist" comment="" />
+      <created>1592030689508</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592030689508</updated>
+      <workItem from="1592030700927" duration="29000" />
+      <workItem from="1592030751226" duration="319000" />
+      <workItem from="1592031081465" duration="2157000" />
+      <workItem from="1592034414084" duration="247000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592031245184">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592031245184" />
+    <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592031240550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="689" y="309" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592031240550" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1592031225516">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592031225516" />
+    <state width="1876" height="130" key="GridCell.Tab.0.bottom" timestamp="1592033625990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="130" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592033625990" />
+    <state width="1876" height="130" key="GridCell.Tab.0.center" timestamp="1592033625990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="130" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592033625990" />
+    <state width="1876" height="130" key="GridCell.Tab.0.left" timestamp="1592033625990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="130" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592033625990" />
+    <state width="1876" height="130" key="GridCell.Tab.0.right" timestamp="1592033625990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="130" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592033625990" />
+    <state x="461" y="151" key="SettingsEditor" timestamp="1592030785751">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="151" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592030785751" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/venv$MainBot.coverage" NAME="MainBot Coverage Results" MODIFIED="1592032087846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/venv$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1592030971285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
