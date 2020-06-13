@@ -61,9 +61,11 @@ class Task:
         return (Scene(self.scenes[self.level_5_get_goto_for_incorrect()], self.scenes, self.tasks))
 
     def level_5_return_if_first_part_fail(self):
+        from Scene import Scene
         return Scene(self.scenes[12], self.scenes, self.tasks)
 
     def level_5_return_first_part_success(self):
+        from Scene import Scene
         return Scene(self.scenes[3], self.scenes, self.tasks)
 
 

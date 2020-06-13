@@ -70,6 +70,29 @@ class Level_5_Handler:
         if not current_part.check_answer(self.message.text):
             next_part = current_part.level_5_get_next_for_incorrect()
             self.player.current_part = next_part
+            if self.player.current_part.type == "Scene" and self.player.current_part.scene_number == 13:
+                if self.first_part_correct > 3:
+                    next_part = self.player.current_part.level_5_return_first_part_success()
+                    self.player.current_part = next_part
+                    markup = self.generate_markup(self.player.current_part.answers)
+                    if self.player.current_part.get_photo_id() != "":
+                        self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
+                                            self.player.current_part.text, reply_markup=markup)
+                    else:
+                        self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup=markup)
+                    self.player.part_type = next_part.type
+                    return (self.player, 0)
+                else:
+                    next_part = self.player.current_part.level_5_return_if_first_part_fail()
+                    self.player.current_part = next_part
+                    markup = self.generate_markup(self.player.current_part.answers)
+                    if self.player.current_part.get_photo_id() != "":
+                        self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
+                                            self.player.current_part.text, reply_markup=markup)
+                    else:
+                        self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup=markup)
+                    self.player.part_type = next_part.type
+                    return (self.player, 0)
             if self.player.current_part.type != "Scene":
                 if self.player.current_part.get_photo_id() != "":
                     self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
@@ -77,12 +100,7 @@ class Level_5_Handler:
                 else:
                     self.bot.send_message(self.message.chat.id, self.player.current_part.text)
             else:
-                markup = self.generate_markup(self.player.current_part.answers)
-                if self.player.current_part.get_photo_id() != "":
-                    self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
-                                        self.player.current_part.text, reply_markup= markup)
-                else:
-                    self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup= markup)
+                self.bot.send_message(self.message.chat.id, "Incorrect answer")
             transition = self.player.current_part.get_transition()
             self.player.part_type = next_part.type
         else:
