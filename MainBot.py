@@ -36,6 +36,7 @@ global prev_message
 global not_advancing
 server = Flask(__name__)
 
+
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Theory"), content_types=['text'])
 def handle_theory(message):
     global current_handlers
@@ -57,23 +58,26 @@ def handle_theory(message):
         if prev_types[message.chat.id] == "Scene":
             not_advancing_flags[message.chat.id] = False
             players[message.chat.id].part_type = "Scene"
-            current_handlers[message.chat.id].player.part_type = "Scene"
-            current_handlers[message.chat.id].player.current_part = prev_parts[message.chat.id]
-            current_handlers[message.chat.id].message = prev_messages[message.chat.id]
-            current_handlers[message.chat.id].handle_scene()
-            players[message.chat.id] = current_handlers[message.chat.id].player
+            current_handler = current_handlers[message.chat.id]
+            current_handler.player.part_type = "Scene"
+            current_handler.player.current_part = prev_parts[message.chat.id]
+            current_handler.message = prev_messages[message.chat.id]
+            current_handler.handle_scene()
+            players[message.chat.id] = current_handler.player
             return
         else:
             not_advancing_flags[message.chat.id] = False
             players[message.chat.id].part_type = "Task"
-            current_handlers[message.chat.id].player.part_type = "Task"
-            current_handlers[message.chat.id].player.current_part = prev_parts[message.chat.id]
-            current_handlers[message.chat.id].message = prev_messages[message.chat.id]
-            current_handlers[message.chat.id].handle_task()
-            players[message.chat.id] = current_handlers[message.chat.id].player
+            current_handler = current_handlers[message.chat.id]
+            current_handler.player.part_type = "Task"
+            current_handler.player.current_part = prev_parts[message.chat.id]
+            current_handler.message = prev_messages[message.chat.id]
+            current_handler.handle_task()
+            players[message.chat.id] = current_handler.player
             return
     new_player = current_handlers[message.chat.id].handle_theory()
     players[message.chat.id] = new_player
+
 
 @bot.message_handler(func=lambda message: message.text == "Теория")
 def theory(message):
@@ -85,13 +89,13 @@ def theory(message):
     players[message.chat.id].part_type = "Theory"
     current_handlers[message.chat.id].handle_start()
 
+
 def generate_markup_for_theory(answers):
     markup = types.ReplyKeyboardMarkup(resize_keyboard= True)
     for answer in answers:
         markup.add(answers)
     markup.add("Вернуться к игре")
     return markup
-
 
 
 @bot.message_handler(commands=['test'])
@@ -112,7 +116,8 @@ def get_ids(message):
         #         msg = bot.send_photo(message.chat.id, f)
         #         bot.send_message(message.chat.id, msg.photo[2].file_id, reply_to_message_id=msg.message_id)
 
-@bot.message_handler(commands=['start'])
+
+@bot.message_handler(commands=['start', 'restart'])
 def send_welcome(message):
     global players
     global current_handlers
@@ -127,6 +132,7 @@ def send_welcome(message):
     prev_types[message.chat.id] = players[message.chat.id].part_type
     prev_parts[message.chat.id] = players[message.chat.id].current_part
     not_advancing_flags[message.chat.id] = False
+
 
 @bot.message_handler(commands=["Level1", "Level2", "Level3", "Level4", "Level5", "Level6"])
 def go_to_level(message):
@@ -167,6 +173,7 @@ def check_player_in_dict(id, type):
     if id not in players:
         return False
     return id in players and players[id].part_type == type
+
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Scene"), content_types=['text'])
 def handle_scene(message):
@@ -218,6 +225,7 @@ def handle_scene(message):
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "Transition"
+
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Task"), content_types=["text"])
 def handle_task(message):
