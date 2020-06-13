@@ -2,49 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c3410a0-5503-44d0-8277-1e8bbfc44e36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi-2020.4.5.1.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/certifi/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/certifi/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/certifi/core.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/installed-files.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/requires.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/pyTelegramBotAPI-3.6.7-py3.8.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six-1.14.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/six.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/six.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/apihelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/apihelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/types.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/types.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/telebot/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/telebot/util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3-1.25.8.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/connectionpool.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/connectionpool.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/pyopenssl.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/pyopenssl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/securetransport.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/contrib/securetransport.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/exceptions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/poolmanager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/poolmanager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/response.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/retry.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/retry.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/ssl_.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/ssl_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/timeout.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/timeout.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/url.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lib/site-packages/urllib3/util/url.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainBot.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainBot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,8 +71,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.MainBot" />
+      <item itemvalue="Python.Unnamed" />
     </list>
   </component>
   <component name="SvnConfiguration">

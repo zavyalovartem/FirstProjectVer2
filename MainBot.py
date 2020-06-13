@@ -16,19 +16,13 @@ import Level_6
 import time
 import Theory
 import Theory_Handler
-import flask
+from flask import Flask, request
 
 bot = telebot.TeleBot(config.Token)
 global players
 global Started
 Started = False
 players = {}
-handlers = {}
-prev_messages = {}
-prev_parts = {}
-prev_types = {}
-handlers_on_hold = {}
-not_advancing_flags = {}
 global current_nandler
 global handler_on_hold
 global prev_type
@@ -36,6 +30,7 @@ global prev_part
 global prev_message
 global not_advancing
 not_advancing = False
+server = Flask(__name__)
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Theory"), content_types=['text'])
 def handle_theory(message):
@@ -83,8 +78,7 @@ def theory(message):
     global handler_on_hold
     global players
     global current_nandler
-    global handlers_on_hold
-    global handlers
+    type_on_hold = players[message.chat.id].part_type
     handler_on_hold = current_nandler
     current_nandler = Theory_Handler.Theory_Handler(bot, message)
     players[message.chat.id].part_type = "Theory"
@@ -277,4 +271,18 @@ def handle_task(message):
         prev_message.text = "Transition"
 
 
-bot.infinity_polling()
+# @server.route('/' + config.Token, methods=['POST'])
+# def getMessage():
+#     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+#     return "!", 200
+#
+# @server.route("/")
+# def webhook():
+#     bot.remove_webhook()
+#     bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
+#     return "!", 200
+#
+# if __name__ == "__main__":
+#     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
+
+bot.polling(none_stop=True)
