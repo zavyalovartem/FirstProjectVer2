@@ -50,7 +50,8 @@ def handle_theory(message):
     if message.text == "Вернуться к игре":
         message = prev_messages[message.chat.id]
         if prev_messages[message.chat.id].text == "/start":
-            send_welcome(prev_message)
+            send_welcome(prev_messages[message.chat.id])
+            return
         current_handlers[message.chat.id] = handlers_on_hold[message.chat.id]
         if prev_messages[message.chat.id].text == "Transition":
             current_handlers[message.chat.id].handle_start()
@@ -79,7 +80,7 @@ def handle_theory(message):
     players[message.chat.id] = new_player
 
 
-@bot.message_handler(func=lambda message: message.text == "Теория")
+@bot.message_handler(func=lambda message: message.text == "Теория" and check_player_for_theory(message.chat.id), content_types=['text'])
 def theory(message):
     global handlers_on_hold
     global players
@@ -88,6 +89,11 @@ def theory(message):
     current_handlers[message.chat.id] = Theory_Handler.Theory_Handler(bot, message)
     players[message.chat.id].part_type = "Theory"
     current_handlers[message.chat.id].handle_start()
+
+
+def check_player_for_theory(id):
+    global players
+    return id in players
 
 
 def generate_markup_for_theory(answers):
