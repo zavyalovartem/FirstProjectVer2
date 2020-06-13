@@ -96,6 +96,9 @@ def check_player_for_theory(id):
     return id in players
 
 
+
+
+
 def generate_markup_for_theory(answers):
     markup = types.ReplyKeyboardMarkup(resize_keyboard= True)
     for answer in answers:
@@ -206,31 +209,31 @@ def handle_scene(message):
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id].text = "Transition"
+        prev_messages[message.chat.id].text = "/Level2"
     elif transition == 3:
         current_handlers[message.chat.id] = Level_3.Level_3_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id].text = "Transition"
+        prev_messages[message.chat.id].text = "/Level3"
     elif transition == 4:
         current_handlers[message.chat.id] = Level_4.Level_4_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id].text = "Transition"
+        prev_messages[message.chat.id].text = "/Level4"
     elif transition == 5:
         current_handlers[message.chat.id] = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id].text = "Transition"
+        prev_messages[message.chat.id].text = "/Level5"
     elif transition == 6:
         current_handlers[message.chat.id] = Level_6.Level_6_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id].text = "Transition"
+        prev_messages[message.chat.id].text = "/Level6"
 
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Task"), content_types=["text"])
@@ -255,32 +258,31 @@ def handle_task(message):
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id] = "Transition"
+        prev_messages[message.chat.id].text = "/Level2"
     elif transition == 3:
         current_handlers[message.chat.id] = Level_3.Level_3_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id] = "Transition"
-        prev_message.text = "Transition"
+        prev_messages[message.chat.id].text = "/Level3"
     elif transition == 4:
         current_handlers[message.chat.id] = Level_4.Level_4_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id] = "Transition"
+        prev_messages[message.chat.id].text = "/Level4"
     elif transition == 5:
         current_handlers[message.chat.id] = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id] = "Transition"
+        prev_messages[message.chat.id] = "/Level5"
     elif transition == 6:
         current_handlers[message.chat.id] = Level_6.Level_6_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
-        prev_messages[message.chat.id] = "Transition"
+        prev_messages[message.chat.id] = "/Level6"
 
 
 # @server.route('/' + config.Token, methods=['POST'])
