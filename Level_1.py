@@ -12,10 +12,10 @@ class Level_1_Handler:
     def __init__(self, player_id, message, bot):
         global scenes
         global tasks
-        path = os.getcwd() + "\\JsonScenes"
-        with open(path + "\\Tasks_Level_1.json", encoding="utf-8") as f:
+        path = os.getcwd() + "/JsonScenes"
+        with open(path + "/Tasks_Level_1.json", encoding="utf-8") as f:
             tasks = json.loads(f.read())
-        with open(path + "\\Scenes_Level_1.json", encoding="utf-8") as f:
+        with open(path + "/Scenes_Level_1.json", encoding="utf-8") as f:
             scenes = json.loads(f.read())
         from Player import Player
         self.player = Player(0, 0, Scene.Scene(scenes[0], scenes, tasks), "Scene")
