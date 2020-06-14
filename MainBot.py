@@ -30,9 +30,6 @@ prev_messages = {}
 not_advancing_flags = {}
 global current_nandler
 global handler_on_hold
-global prev_type
-global prev_part
-global prev_message
 global not_advancing
 server = Flask(__name__)
 
@@ -49,8 +46,27 @@ def handle_theory(message):
     current_handlers[message.chat.id].message = message
     if message.text == "Вернуться к игре":
         message = prev_messages[message.chat.id]
-        if prev_messages[message.chat.id].text == "/start":
+        prev_message = prev_messages[message.chat.id]
+        if prev_message.text == "/start":
             send_welcome(prev_messages[message.chat.id])
+            return
+        if prev_message.text == "/Level1":
+            switch_levels(prev_message)
+            return
+        elif prev_message.text == "/Level2":
+            switch_levels(prev_message)
+            return
+        elif prev_message.text == "/Level3":
+            switch_levels(prev_message)
+            return
+        elif prev_message.text == "/Level4":
+            switch_levels(prev_message)
+            return
+        elif prev_message.text == "/Level5":
+            switch_levels(prev_message)
+            return
+        elif prev_message.text == "/Level6":
+            switch_levels(prev_message)
             return
         current_handlers[message.chat.id] = handlers_on_hold[message.chat.id]
         if prev_messages[message.chat.id].text == "Transition":
@@ -96,7 +112,13 @@ def check_player_for_theory(id):
     return id in players
 
 
-
+def go_to_level(message, handler):
+    global current_handlers
+    current_handlers[message.chat.id] = handler
+    current_handlers[message.chat.id].handle_start()
+    players[message.chat.id] = current_handlers[message.chat.id].player
+    prev_messages[message.chat.id].text = message.text
+    return
 
 
 def generate_markup_for_theory(answers):
@@ -144,38 +166,20 @@ def send_welcome(message):
 
 
 @bot.message_handler(commands=["Level1", "Level2", "Level3", "Level4", "Level5", "Level6"])
-def go_to_level(message):
+def switch_levels(message):
     global current_handlers
     if message.text == "/Level1":
-        current_handlers[message.chat.id] = Level_1.Level_1_Handler(message.chat.id, message, bot)
-        current_handlers[message.chat.id].handle_start()
-        players[message.chat.id] = current_handlers[message.chat.id].player
-        prev_messages[message.chat.id].text = "Transition"
+        go_to_level(message, Level_1.Level_1_Handler(message.chat.id, message, bot))
     elif message.text == "/Level2":
-        current_handlers[message.chat.id] = Level_2.Level_2_Handler(message.chat.id, message, bot)
-        current_handlers[message.chat.id].handle_start()
-        players[message.chat.id] = current_handlers[message.chat.id].player
-        prev_messages[message.chat.id].text = "Transition"
+        go_to_level(message, Level_2.Level_2_Handler(message.chat.id, message, bot))
     elif message.text == "/Level3":
-        current_handlers[message.chat.id] = Level_3.Level_3_Handler(message.chat.id, message, bot)
-        current_handlers[message.chat.id].handle_start()
-        players[message.chat.id] = current_handlers[message.chat.id].player
-        prev_messages[message.chat.id].text = "Transition"
+        go_to_level(message, Level_3.Level_3_Handler(message.chat.id, message, bot))
     elif message.text == "/Level4":
-        current_handlers[message.chat.id] = Level_4.Level_4_Handler(message.chat.id, message, bot)
-        current_handlers[message.chat.id].handle_start()
-        players[message.chat.id] = current_handlers[message.chat.id].player
-        prev_messages[message.chat.id].text = "Transition"
+        go_to_level(message, Level_4.Level_4_Handler(message.chat.id, message, bot))
     elif message.text == "/Level5":
-        current_handlers[message.chat.id] = Level_5.Level_5_Handler(message.chat.id, message, bot)
-        current_handlers[message.chat.id].handle_start()
-        players[message.chat.id] = current_handlers[message.chat.id].player
-        prev_messages[message.chat.id].text = "Transition"
+        go_to_level(message, Level_5.Level_5_Handler(message.chat.id, message, bot))
     elif message.text == "/Level6":
-        current_handlers[message.chat.id] = Level_6.Level_6_Handler(message.chat.id, message, bot)
-        current_handlers[message.chat.id].handle_start()
-        players[message.chat.id] = current_handlers[message.chat.id].player
-        prev_messages[message.chat.id].text = "Transition"
+        go_to_level(message, Level_6.Level_6_Handler(message.chat.id, message, bot))
 
 
 def check_player_in_dict(id, type):
