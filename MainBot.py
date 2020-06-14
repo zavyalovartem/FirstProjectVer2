@@ -168,6 +168,8 @@ def send_welcome(message):
 @bot.message_handler(commands=["Level1", "Level2", "Level3", "Level4", "Level5", "Level6"])
 def switch_levels(message):
     global current_handlers
+    if not check_player_for_theory(message.chat.id):
+        return
     if message.text == "/Level1":
         go_to_level(message, Level_1.Level_1_Handler(message.chat.id, message, bot))
     elif message.text == "/Level2":

@@ -31,6 +31,8 @@ class Scene:
         return ""
 
     def check_advancing(self, message_text):
+        if message_text not in self.answers:
+            return False
         if self.type != self.answers[message_text]["Type"] or self.scene_number != self.answers[message_text]["Goto"]:
             return True
         return False
