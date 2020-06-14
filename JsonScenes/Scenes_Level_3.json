@@ -27,7 +27,7 @@
     "Answers" : {
       "Зайти в дом":  {
                   "Response": "",
-                  "Goto": 2,
+                  "Goto": 3,
                   "Type": "Task"
                 }
   },
