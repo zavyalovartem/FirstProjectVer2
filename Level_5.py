@@ -100,7 +100,15 @@ class Level_5_Handler:
                 else:
                     self.bot.send_message(self.message.chat.id, self.player.current_part.text)
             else:
-                self.bot.send_message(self.message.chat.id, "Incorrect answer")
+                if self.player.current_part.scene_number < 6:
+                    self.bot.send_message(self.message.chat.id, "Incorrect answer")
+                else:
+                    markup = self.generate_markup(self.player.current_part.answers)
+                    if self.player.current_part.get_photo_id() != "":
+                        self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
+                                            self.player.current_part.text, reply_markup=markup)
+                    else:
+                        self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup=markup)
             transition = self.player.current_part.get_transition()
             self.player.part_type = next_part.type
         else:
