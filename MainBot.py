@@ -28,9 +28,6 @@ prev_types = {}
 prev_parts = {}
 prev_messages = {}
 not_advancing_flags = {}
-global current_nandler
-global handler_on_hold
-global not_advancing
 server = Flask(__name__)
 
 
@@ -42,7 +39,6 @@ def handle_theory(message):
     global prev_messages
     global handlers_on_hold
     global players
-    global not_advancing_flags
     current_handlers[message.chat.id].message = message
     if message.text == "Вернуться к игре":
         message = prev_messages[message.chat.id]
@@ -73,7 +69,6 @@ def handle_theory(message):
             current_handlers[message.chat.id].handle_start()
             return
         if prev_types[message.chat.id] == "Scene":
-            not_advancing_flags[message.chat.id] = False
             players[message.chat.id].part_type = "Scene"
             current_handler = current_handlers[message.chat.id]
             current_handler.player.part_type = "Scene"
@@ -83,7 +78,6 @@ def handle_theory(message):
             players[message.chat.id] = current_handler.player
             return
         else:
-            not_advancing_flags[message.chat.id] = False
             players[message.chat.id].part_type = "Task"
             current_handler = current_handlers[message.chat.id]
             current_handler.player.part_type = "Task"
@@ -155,14 +149,12 @@ def send_welcome(message):
     global prev_types
     global prev_parts
     global prev_messages
-    global not_advancing_flags
     current_handlers[message.chat.id] = Level_1.Level_1_Handler(message.chat.id, message, bot)
     players[message.chat.id] = current_handlers[message.chat.id].player
     current_handlers[message.chat.id].handle_start()
     prev_messages[message.chat.id] = message
     prev_types[message.chat.id] = players[message.chat.id].part_type
     prev_parts[message.chat.id] = players[message.chat.id].current_part
-    not_advancing_flags[message.chat.id] = False
 
 
 @bot.message_handler(commands=["Level1", "Level2", "Level3", "Level4", "Level5", "Level6"])
@@ -201,12 +193,10 @@ def handle_scene(message):
 
     #Менять при смене хэндлера вручную все prev (костыль)
     player = players[message.chat.id]
-    if not not_advancing_flags[message.chat.id] and player.current_part.check_advancing(message.text):
+    if player.current_part.check_advancing(message.text):
         prev_types[message.chat.id] = players[message.chat.id].part_type
         prev_parts[message.chat.id] = players[message.chat.id].current_part
         prev_messages[message.chat.id] = message
-    else:
-        not_advancing_flags[message.chat.id] = True
     current_handlers[message.chat.id].message = message
     new_player, transition = current_handlers[message.chat.id].handle_scene()
     players[message.chat.id] = new_player
@@ -250,12 +240,10 @@ def handle_task(message):
     global prev_types
     global not_advancing_flags
     player = players[message.chat.id]
-    if not not_advancing_flags[message.chat.id] and player.current_part.check_advancing(message.text):
+    if player.current_part.check_advancing(message.text):
         prev_types[message.chat.id] = players[message.chat.id].part_type
         prev_parts[message.chat.id] = players[message.chat.id].current_part
         prev_messages[message.chat.id] = message
-    else:
-        not_advancing_flags[message.chat.id] = True
     current_handlers[message.chat.id].message = message
     new_player, transition = current_handlers[message.chat.id].handle_task()
     players[message.chat.id] = new_player
