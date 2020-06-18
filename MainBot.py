@@ -291,7 +291,7 @@ def handle_task(message):
         players[message.chat.id] = current_handlers[message.chat.id].player
 
 
-@server.route('/bot', methods=['POST'])
+@server.route('/' + config.Token, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
@@ -300,7 +300,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/bot')
+    bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
     return "!", 200
 
 
