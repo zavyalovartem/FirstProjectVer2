@@ -309,6 +309,7 @@ def webhook():
 logger = telebot.logger
 telebot.logger.setLevel(logging.INFO)
 server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 80)))
+webhook()
 
 
 # bot.polling(none_stop=True)
