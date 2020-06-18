@@ -182,6 +182,7 @@ def check_player_in_dict(id, type):
     return id in players and players[id].part_type == type
 
 
+# Менять при смене уровня player в дикте игроков, иначе баг (18.06.20, не пофикшено)
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Scene"), content_types=['text'])
 def handle_scene(message):
     global current_handlers
@@ -193,7 +194,7 @@ def handle_scene(message):
 
     #Менять при смене хэндлера вручную все prev (костыль)
     player = players[message.chat.id]
-    if player.current_part.check_advancing(message.text):
+    if player.current_part.check_advancing(message.text) or player.current_part.get_without_answers_flag():
         prev_types[message.chat.id] = players[message.chat.id].part_type
         prev_parts[message.chat.id] = players[message.chat.id].current_part
         prev_messages[message.chat.id] = message
@@ -206,30 +207,35 @@ def handle_scene(message):
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level2"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 3:
         current_handlers[message.chat.id] = Level_3.Level_3_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level3"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 4:
         current_handlers[message.chat.id] = Level_4.Level_4_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level4"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 5:
         current_handlers[message.chat.id] = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level5"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 6:
         current_handlers[message.chat.id] = Level_6.Level_6_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level6"
+        players[message.chat.id] = current_handlers[message.chat.id].player
 
 
 @bot.message_handler(func=lambda message: check_player_in_dict(message.chat.id, "Task"), content_types=["text"])
@@ -240,7 +246,7 @@ def handle_task(message):
     global prev_types
     global not_advancing_flags
     player = players[message.chat.id]
-    if player.current_part.check_advancing(message.text):
+    if player.current_part.check_advancing(message.text) or player.current_part.get_without_answers_flag():
         prev_types[message.chat.id] = players[message.chat.id].part_type
         prev_parts[message.chat.id] = players[message.chat.id].current_part
         prev_messages[message.chat.id] = message
@@ -253,30 +259,35 @@ def handle_task(message):
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level2"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 3:
         current_handlers[message.chat.id] = Level_3.Level_3_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level3"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 4:
         current_handlers[message.chat.id] = Level_4.Level_4_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id].text = "/Level4"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 5:
         current_handlers[message.chat.id] = Level_5.Level_5_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id] = "/Level5"
+        players[message.chat.id] = current_handlers[message.chat.id].player
     elif transition == 6:
         current_handlers[message.chat.id] = Level_6.Level_6_Handler(message.chat.id, message, bot)
         current_handlers[message.chat.id].handle_start()
         prev_parts[message.chat.id] = current_handlers[message.chat.id].player.current_part
         prev_types[message.chat.id] = current_handlers[message.chat.id].player.part_type
         prev_messages[message.chat.id] = "/Level6"
+        players[message.chat.id] = current_handlers[message.chat.id].player
 
 
 # @server.route('/' + config.Token, methods=['POST'])

@@ -25,6 +25,7 @@
     },
     "PhotoId": "AgACAgIAAxkDAAINil7Tz3rHaR61ckWbfwjgSw7muFFvAALzrTEb3eahSksc8K3Ngc9wEh3rkS4AAwEAAwIAA3kAAwOkAgABGQQ",
     "CurrentType" : "Task",
+    "Without_answers": false,
     "Text":"\"На этом кране мы можем выставлять только силу, с которой он будет поднимать груз. Нам надо рассчитать силу для этой балки, её длина 25 метров, масса одного метра равно 65 кг, противоположный край должен быть поднят на 7 метров. Сила выставляется в кН\""
   },
   {
@@ -53,6 +54,7 @@
     },
     "PhotoId": "AgACAgIAAxkDAAINjF7Tz3wQaXTMBYBwig500i3QBWkhAAICrjEb3eahSvJRe3Vh2zs7sV1JkS4AAwEAAwIAA3kAA4gyBAABGQQ",
     "CurrentType" : "Task",
+    "Without_answers": false,
     "Text":"Внимательно изучив чертежи и старые расчеты, ты понимаешь, что тебе надо найти боковое давление воды, вызванное центробежной силой. Известно, что диаметр трубы равен 0,2 метра, радиус закругления плоскости 20 метров. Через поперечное сечение трубы за единицу времени протекает масса воды 300 т/ч."
   },
   {
@@ -81,6 +83,7 @@
     },
     "PhotoId": "AgACAgIAAxkDAAINjl7Tz33ySE1-ZbnGJ5LeUANQjMcEAAIDrjEb3eahSifjwkgCvaw-HxAFki4AAwEAAwIAA3kAAwUVAgABGQQ",
     "CurrentType" : "Task",
+    "Without_answers": false,
     "Text":"Тело массой 2 кг движется навстречу второму телу массой 1,5 кг и неупруго соударяется с ним. Скорости тел непосредственно перед ударом были 1 м/с и 2 м/с . Какое время будут двигаться эти тела после удара, если коэффициент трения равен 0,05 ?"
   },
   {
@@ -109,6 +112,7 @@
     },
     "PhotoId": "AgACAgIAAxkDAAINkF7Tz3_w9FkPWLE2C10SxbxQv6YSAAIErjEb3eahSiIQysO17jaZwuX5lC4AAwEAAwIAA3kAA0M-AAIZBA",
     "CurrentType" : "Task",
+    "Without_answers": false,
     "Text":"Чему равен коэффициент полезного действия наклонной плоскости длиной 3 м и высотой 1,8 м, если коэффициент трения 0,1?"
   }
 ]

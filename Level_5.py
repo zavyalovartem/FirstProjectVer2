@@ -22,6 +22,7 @@ class Level_5_Handler:
         self.message = message
         self.bot = bot
         self.first_part_correct = 0
+        self.first_part_complete_tasks = []
 
     def handle_start(self):
         markup = self.generate_markup(self.player.current_part.answers)
@@ -46,12 +47,14 @@ class Level_5_Handler:
                 self.player.current_part = next_part
                 markup = self.generate_markup(self.player.current_part.answers)
                 if next_part.type == "Task":
+                    markup = types.ReplyKeyboardMarkup()
+                    markup.add("Теория")
                     if self.player.current_part.get_photo_id() != "":
                         self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
-                                            self.player.current_part.text, reply_markup= types.ReplyKeyboardRemove())
+                                            self.player.current_part.text, reply_markup= markup)
                     else:
                         self.bot.send_message(self.message.chat.id, self.player.current_part.text,
-                                              reply_markup= types.ReplyKeyboardRemove())
+                                              reply_markup= markup)
                 else:
                     if self.player.current_part.get_photo_id() != "":
                         self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(), self.player.current_part.text,
@@ -62,6 +65,7 @@ class Level_5_Handler:
                 self.player.part_type = next_part.type
         return (self.player, transition)
 
+    # Очень плохой метод, нужно переписать если будет время, пока что закомментирую чтобы было понятно как работает
     def handle_task(self):
         current_part = self.player.current_part
         transition = 0
@@ -70,6 +74,7 @@ class Level_5_Handler:
         if not current_part.check_answer(self.message.text):
             next_part = current_part.level_5_get_next_for_incorrect()
             self.player.current_part = next_part
+            # Проверка задач стариком, костыль(можно вынести в отдельный метод)
             if self.player.current_part.type == "Scene" and self.player.current_part.scene_number == 13:
                 if self.first_part_correct > 3:
                     next_part = self.player.current_part.level_5_return_first_part_success()
@@ -93,12 +98,16 @@ class Level_5_Handler:
                         self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup=markup)
                     self.player.part_type = next_part.type
                     return (self.player, 0)
+            # Случай, если следующая часть - задача
             if self.player.current_part.type != "Scene":
+                markup = types.ReplyKeyboardMarkup()
+                markup.add("Теория")
                 if self.player.current_part.get_photo_id() != "":
                     self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(),
-                                        self.player.current_part.text)
+                                        self.player.current_part.text, reply_markup= markup)
                 else:
-                    self.bot.send_message(self.message.chat.id, self.player.current_part.text)
+                    self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup= markup)
+            # След часть - сцена
             else:
                 if self.player.current_part.scene_number < 6:
                     self.bot.send_message(self.message.chat.id, "Incorrect answer")
@@ -112,13 +121,16 @@ class Level_5_Handler:
             transition = self.player.current_part.get_transition()
             self.player.part_type = next_part.type
         else:
-            self.first_part_correct += 1
+            if current_part.task_number not in self.first_part_complete_tasks:
+                self.first_part_complete_tasks.append(current_part.task_number)
+                self.first_part_correct += 1
             response = current_part.get_response(self.message.text)
             if response != "":
                 self.bot.send_message(self.message.chat.id, response)
             next_part, flag = current_part.get_next(self.message.text)
             if flag:
                 self.player.current_part = next_part
+                # Проверка пути после решения первых 5 задач
                 if self.player.current_part.type == "Scene" and self.player.current_part.scene_number == 13:
                     if self.first_part_correct > 3:
                         next_part = self.player.current_part.level_5_return_first_part_success()
@@ -143,10 +155,12 @@ class Level_5_Handler:
                         self.player.part_type = next_part.type
                         return (self.player, 0)
                 if self.player.current_part.type != "Scene":
+                    markup = types.ReplyKeyboardMarkup()
+                    markup.add("Теория")
                     if self.player.current_part.get_photo_id() != "":
-                        self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(), self.player.current_part.text)
+                        self.bot.send_photo(self.message.chat.id, self.player.current_part.get_photo_id(), self.player.current_part.text, reply_markup= markup)
                     else:
-                        self.bot.send_message(self.message.chat.id, self.player.current_part.text)
+                        self.bot.send_message(self.message.chat.id, self.player.current_part.text, reply_markup= markup)
                 else:
                     markup = self.generate_markup(self.player.current_part.answers)
                     if self.player.current_part.get_photo_id() != "":

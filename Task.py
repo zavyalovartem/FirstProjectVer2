@@ -43,6 +43,9 @@ class Task:
         from Scene import Scene
         return (Scene(self.scenes[self.answers[message]["Goto"]], self.scenes, self.tasks), change)
 
+    def get_without_answers_flag(self):
+        return self.raw_data["Without_answers"]
+
     def level_1_check_task_correctness(self, answer):
         if self.task_number > 0:
             return self.answers[answer]["Correct"] == "True"
