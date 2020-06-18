@@ -297,9 +297,6 @@ def getMessage():
     print("Got message")
     return "!", 200
 
-bot.remove_webhook()
-bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
-print("Webhook set outside")
 
 @server.route("/")
 def webhook():
@@ -311,6 +308,7 @@ def webhook():
 
 if __name__ == "__main__":
     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
+    webhook()
 
 
 # bot.polling(none_stop=True)
