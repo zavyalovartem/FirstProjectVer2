@@ -310,5 +310,5 @@ def handle_task(message):
 #     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
 #     webhook()
 
-
+bot.remove_webhook()
 bot.polling(none_stop=True)
