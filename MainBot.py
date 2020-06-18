@@ -294,6 +294,7 @@ def handle_task(message):
 @server.route('/' + config.Token, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    print("Got message")
     return "!", 200
 
 
@@ -301,6 +302,7 @@ def getMessage():
 def webhook():
     bot.remove_webhook()
     bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
+    print("Webhook set")
     return "!", 200
 
 
