@@ -301,7 +301,7 @@ def getMessage():
     return "!", 200
 
 
-@server.route("/")
+@server.route("/setWebhook")
 def webhook():
     logger.info("Removing webhook")
     bot.remove_webhook()
