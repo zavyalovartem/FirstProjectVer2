@@ -291,23 +291,29 @@ def handle_task(message):
         players[message.chat.id] = current_handlers[message.chat.id].player
 
 
-# @server.route('/' + config.Token, methods=['POST'])
-# def getMessage():
-#     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-#     print("Got message")
-#     return "!", 200
-#
-#
-# @server.route("/")
-# def webhook():
-#     bot.remove_webhook()
-#     bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
-#     print("Webhook set")
-#     return "!", 200
-#
-#
-# if __name__ == "__main__":
-#     server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
+logger = telebot.logger
 
-#bot.remove_webhook()
-bot.polling(none_stop=True)
+
+@server.route('/' + config.Token, methods=['POST'])
+def getMessage():
+    logger.info("Got new update")
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
+
+
+@server.route("/")
+def webhook():
+    logger.info("Removing webhook")
+    bot.remove_webhook()
+    logger.info("Setting new webhook")
+    bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
+    logger.info("Webhook set")
+    return "!", 200
+
+
+if __name__ == "__main__":
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
+
+
+# bot.remove_webhook()
+# bot.polling(none_stop=True)
