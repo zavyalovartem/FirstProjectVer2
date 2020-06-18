@@ -301,18 +301,18 @@ def getMessage():
     return "!", 200
 
 
-@server.route("/setWebhook")
+@server.route("/setWebhook", methods=['POST', 'GET'])
 def webhook():
     logger.info("Removing webhook")
     bot.remove_webhook()
     logger.info("Setting new webhook")
-    bot.set_webhook(url='https://divinely-inspired-project.herokuapp.com/' + config.Token)
+    bot.set_webhook(url='https://divinely-inspired.herokuapp.com/' + config.Token)
     logger.info("Webhook set")
     return "!", 200
 
 
 if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)), debug= True)
 
 
 # bot.remove_webhook()
