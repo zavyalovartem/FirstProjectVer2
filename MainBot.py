@@ -17,6 +17,7 @@ import time
 import Theory
 import Theory_Handler
 from flask import Flask, request
+import logging
 
 bot = telebot.TeleBot(config.Token, threaded=False)
 global players
@@ -303,6 +304,8 @@ def webhook():
     return "!", 200
 
 
+logger = telebot.logger
+telebot.logger.setLevel(logging.INFO)
 server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 80)))
 
 
