@@ -18,7 +18,7 @@ import Theory
 import Theory_Handler
 from flask import Flask, request
 
-bot = telebot.TeleBot(config.Token)
+bot = telebot.TeleBot(config.Token, threaded=False)
 global players
 global Started
 players = {}
@@ -304,7 +304,7 @@ def webhook():
 
 
 if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8443)))
+    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 80)))
 
 
 # bot.polling(none_stop=True)
